@@ -1,4 +1,7 @@
 @import "utilities/variables";
+@import "utilities/mapas";
+@import "utilities/mixin";
+@import "utilities/extend";
 
 /* reset */
 * {
@@ -16,7 +19,13 @@ body {
                 .navbar {
                     .container-fluid {
                         .navbar-brand {
-                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            
+                                font-family: 'Times New Roman', Times, serif;
+                            
+                          
+                        
+                        
+                         }  
                         }
                     }
                 }
@@ -137,9 +146,7 @@ body {
     footer {
         background-color: $color-pie;
         margin-top: 10rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @extend %flex;
     }
 
     .bg-menu {
@@ -151,17 +158,14 @@ body {
 
     .main-proyectos {
         .titulo {
-            display: flex;
-            flex-direction: column;
+            @extend %flex;
             justify-content: center;
-            align-items: center;
             margin-top: 2rem;
             margin-left: 1rem;
             margin-right: 1rem;
 
             .proyecto__titulo--contract {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
             }
 
             .proyecto__titulo--descripcion {
@@ -169,7 +173,7 @@ body {
             }
 
             .titulo__image {
-                width: 82%;
+                width: map-get($map: $standard, $key: width-standard);
             }
         }
 
@@ -184,54 +188,48 @@ body {
                 margin-bottom: 2rem;
 
                 .proyecto__fases img {
-                    width: 82%;
+                    width: map-get($map: $standard, $key: width-standard);
                 }
             }
 
             .proyecto__datos {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
 
                 .proyecto__datos img {
-                    width: 82%;
-                }
+                    width: map-get($map: $standard, $key: width-standard);               
+                 }
             }
 
             .proyecto__concepto {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
 
                 .proyecto__concepto img {
-                    width: 82%;
+                    width: map-get($map: $standard, $key: width-standard);
                 }
             }
 
             .proyecto__antiproyecto {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
 
                 .proyecto__antiproyecto img {
-                    width: 82%;
+                    width: map-get($map: $standard, $key: width-standard);
                 }
             }
 
             .proyecto__presupuesto {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
             }
 
             .proyecto__ejecucion {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
 
                 .proyecto__ejecucion img {
-                    width: 82%;
+                    width: map-get($map: $standard, $key: width-standard);
                 }
             }
 
             .proyecto__obra {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
+                @include box-model;
             }
 
         }
@@ -324,7 +322,7 @@ body {
         }
     }
 
-}
+
 
 /* mediaqueries */
 /* para tablet arriba de 500 px hasta 1080px*/
@@ -520,3 +518,7 @@ body {
         }
     }
 }
+
+
+
+
